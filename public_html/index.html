@@ -1,0 +1,92 @@
+<html>
+	<head>
+		<title> CALCULATRICE JS </title>
+		<style type="text/css">
+			*{
+				color:#fff;
+			}
+			#cadre{
+				height:60%;
+				width:25%;
+				background-color:#5A5C68;
+			}
+			#ecran{
+				background-color:#C1D798;
+				height:15%;
+				width:90%;
+				margin:10px;
+				margin-top:2px;
+				font-size:xx-large;
+				border:none;
+			}
+			button{
+				position:relative;
+				height:18%;
+				width:22%;
+				margin:3px;
+				font-size:xx-large;
+				border:none;
+				
+			}
+			#touches{
+				margin:10px;
+			}
+			#cadre,#ecran,button{
+				border-radius:10px;
+			}
+			.nb{
+				background-color:#3D4049;
+			}
+			.op{
+				background-color:#BCC0C7;
+			}
+			#res{
+				height:70px;
+				background-color:#5A5C68;
+			}
+		</style>
+	</head>
+	<body>
+	<center>
+		<div id="cadre">
+		
+			<div>
+				<input id="ecran" type="text" disabled/>
+			</div>
+			<div id="clavier">
+				<div id="touches">
+					<button class="nb" onclick="get(7)">7</button>
+					<button class="nb" onclick="get(8)">8</button>
+					<button class="nb" onclick="get(9)">9</button>
+					<button class="op" onclick="get('/')">/</button>
+					<button class="nb" onclick="get(4)">4</button>
+					<button class="nb" onclick="get(5)">5</button>
+					<button class="nb" onclick="get(6)">6</button>
+					<button class="op" onclick="get('*')">*</button>
+					<button class="nb" onclick="get(3)">3</button>
+					<button class="nb" onclick="get(2)">2</button>
+					<button class="nb" onclick="get(1)">1</button>
+					<button class="op" onclick="get('-')">-</button>
+					<button class="nb" onclick="get(0)">0</button>
+					<button class="op" onclick="get('.')">.</button>
+					<button class="op" onclick="resultat()">=</button>
+					<button class="op" onclick="get('+')">+</button>
+				</div>
+			</div>
+		</div>
+		<button id="res" onclick="reset()">RESET</button>
+		</center>
+		<script type="text/javascript">
+			function get(ch){
+			document.getElementById("ecran").value+=ch;
+			}
+			function resultat(){
+			 var ans = document.getElementById("ecran").value;
+			document.getElementById("ecran").value = eval(ans);
+			}
+			function reset(){
+				document.getElementById("ecran").value="";
+			}
+		</script>
+	</body>
+</html>
